@@ -1,40 +1,37 @@
-# alx_travel_app_0x01
+# alx_travel_app_0x02
 
-This is a Django RESTful application for managing travel listings, bookings, and reviews.
+This is a Django RESTful application for managing travel listings, bookings, and payments with **Chapa API**.
 
 ## Project Overview
-
-This project is part of ALX Software Engineering program.
+This project is part of the ALX Software Engineering program.
 
 ## Project Structure
-
-- `listings/` — Django app containing models, serializers, and seed logic
-- `alx_travel_app/` — Main project settings and URL configuration
-- `requirements.txt` — Python dependencies
-- `README.md` — Project setup and documentation
+- `listings/` — Django app containing models, serializers, and seed logic  
+- `alx_travel_app/` — Main project settings and URL configuration  
+- `requirements.txt` — Python dependencies  
+- `README.md` — Project setup and documentation  
 
 ## Features
-
-- Create and view travel listings
-- Book available listings by date
-- Leave reviews on listings
+- Create and view travel listings  
+- Book available listings by date  
+- Make secure payments via **Chapa API**  
 
 ## Technologies Used
-
-- Python 3
-- Django 3.2
-- Django REST Framework
+- Python 3  
+- Django 3.2  
+- Django REST Framework  
+- Chapa API  
 
 ## Setup Instructions
-
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Stev1000/alx_travel_app_0x01.git
-cd alx_travel_app_0x01
+git clone https://github.com/Stev1000/alx_travel_app_0x02.git
+cd alx_travel_app_0x02
 
 # 2. Create and activate a virtual environment
 python -m venv venv
-.\venv\Scripts\activate
+.\venv\Scripts\activate   # On Windows
+source venv/bin/activate  # On Linux/Mac
 
 # 3. Install dependencies
 pip install -r requirements.txt
@@ -43,34 +40,8 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 
-# 5. Seed the database
-python manage.py seed
-
-# 6. (Optional) Create a superuser
+# 5. (Optional) Create a superuser
 python manage.py createsuperuser
 
-# 7. Run the server
+# 6. Run the server
 python manage.py runserver
-
-```
-
-## API Endpoints
-
-- `GET /api/listings/` — List all listings  
-- `POST /api/listings/` — Create a new listing  
-- `GET /api/bookings/` — List all bookings  
-- `POST /api/bookings/` — Create a new booking  
-
-## Author
-
-Project by Stevo  
-GitHub: [https://github.com/Stev1000](https://github.com/Stev1000)
-
-### 🔁 Then in terminal
-
-```bash
-git add README.md
-git commit -m "Fix: clean and correct README.md for ALX checker"
-git push
-
-
