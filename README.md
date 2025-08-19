@@ -2,51 +2,43 @@
 
 This is a Django RESTful application for managing travel listings, bookings, and payments with **Chapa API**.
 
-## Project Overview
+## Milestone 4: Payment Integration with Chapa API
 
-This project is part of the ALX Software Engineering program.
+This project integrates Chapa Payment Gateway for secure payment processing in a travel booking application.
+
+## Features Implemented
+
+- Payment Model: Created Payment model in listings/models.py to track transactions
+- Payment Initiation: API endpoint to initiate payments via Chapa API  
+- Payment Verification: API endpoint to verify payment status
+- Secure Credentials: API keys stored in environment variables
+- Payment Workflow: Complete booking and payment flow integration
+- Error Handling: Graceful handling of payment failures
+- Email Notifications: Confirmation emails sent on successful payments
 
 ## Project Structure
 
-- `listings/` — Django app containing models, serializers, and seed logic  
-- `alx_travel_app/` — Main project settings and URL configuration  
-- `requirements.txt` — Python dependencies  
-- `README.md` — Project setup and documentation  
-
-## Features
-
-- Create and view travel listings  
-- Book available listings by date  
-- Make secure payments via **Chapa API**  
+- listings/models.py — Contains Payment model and booking models
+- listings/views.py — Payment initiation and verification endpoints
+- alx_travel_app/ — Main project settings and URL configuration
+- requirements.txt — Python dependencies including Chapa integration
 
 ## Technologies Used
 
-- Python 3  
-- Django 3.2  
-- Django REST Framework  
-- Chapa API  
+- Python 3
+- Django 3.2
+- Django REST Framework
+- Chapa API for payments
+- PostgreSQL
+- Celery for background tasks
+- Requests library for API calls
 
-## Setup Instructions
+## Payment Integration
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/Stev1000/alx_travel_app_0x02.git
-cd alx_travel_app_0x02
+This application successfully integrates with Chapa API to:
+1. Initiate secure payments for travel bookings
+2. Verify payment statuses  
+3. Update booking records based on payment results
+4. Send confirmation emails on successful transactions
 
-# 2. Create and activate a virtual environment
-python -m venv venv
-.\venv\Scripts\activate   # On Windows
-source venv/bin/activate  # On Linux/Mac
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Apply migrations
-python manage.py makemigrations
-python manage.py migrate
-
-# 5. (Optional) Create a superuser
-python manage.py createsuperuser
-
-# 6. Run the server
-python manage.py runserver
+The payment integration is fully tested using Chapa's sandbox environment.
