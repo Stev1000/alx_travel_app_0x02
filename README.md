@@ -3,26 +3,31 @@
 This is a Django RESTful application for managing travel listings, bookings, and payments with **Chapa API**.
 
 ## Project Overview
+
 This project is part of the ALX Software Engineering program.
 
 ## Project Structure
+
 - `listings/` — Django app containing models, serializers, and seed logic  
 - `alx_travel_app/` — Main project settings and URL configuration  
 - `requirements.txt` — Python dependencies  
 - `README.md` — Project setup and documentation  
 
 ## Features
+
 - Create and view travel listings  
 - Book available listings by date  
 - Make secure payments via **Chapa API**  
 
 ## Technologies Used
+
 - Python 3  
 - Django 3.2  
 - Django REST Framework  
 - Chapa API  
 
 ## Setup Instructions
+
 ```bash
 # 1. Clone the repository
 git clone https://github.com/Stev1000/alx_travel_app_0x02.git
