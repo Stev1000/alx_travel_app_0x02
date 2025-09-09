@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Listing, Booking, Payment
 from .serializers import ListingSerializer, BookingSerializer
+from .tasks import send_booking_email   # ✅ keep this import
 
 
 # -----------------------------
@@ -28,6 +29,18 @@ class ListingViewSet(viewsets.ModelViewSet):
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+
+    # ✅ Only add this method, do not touch existing logic
+    def perform_create(self, serializer):
+        booking = serializer.save()
+
+        # try to fetch user email if booking has user, else fallback
+        user_email = (
+            booking.user.email if hasattr(booking, "user") and booking.user else "test@example.com"
+        )
+
+        # trigger background email
+        send_booking_email.delay(booking.id, user_email)
 
 
 # -----------------------------
